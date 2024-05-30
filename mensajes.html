@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+    <title>Opciones de administrador - SUBLIME</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+  
+    <!-- Favicons -->
+    <link href="assets/img/logo.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+    <!-- Template Main CSS File -->
+    <link rel="stylesheet" href="CSS/user.css">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header id="header">
+        <div class="logo">
+            <h1>
+                <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+                <a href="index.html">SUBLIME<span>.</span></a>
+            </h1>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="admin.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="#">Categorias</a></li>
+                <li><a class="active" href="#">Mensajes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="section-title">
+        <h2>Mensajes Clientes</h2>
+    </div>
+
+    <div class="container mt-4 shadow-lg p3 mb-5 bg-body rounded">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Cliente</th>
+                    <th>Telefono</th>
+                    <th>Motivo</th>
+                    <th>Mensaje</th>
+                </tr>
+            </thead>
+            <tbody id="data">
+
+            </tbody>
+
+        </table>
+    </div>
+
+
+
+    <footer id="footer">
+        <div class="footer-top">
+            <h3>SUBLIME</h3>
+            <p>Your mission or tagline goes here.</p>
+        </div>
+    </footer>
+
+</body>
+  <!--CONEXION A FIREBASE-->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+  
+    <!--Mis Scripts-->
+    <script src="/JavaScrip/conexion.js"></script>
+    <script src="JavaScrip/agregar.js"></script>
+    <script src="/JavaScrip/vermensajes.js"></script>
+
+</html>

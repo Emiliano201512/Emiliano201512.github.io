@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+    <title>Opciones de administrador - SUBLIME</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+  
+    <!-- Favicons -->
+    <link href="assets/img/logo.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+    <!-- Template Main CSS File -->
+    <link rel="stylesheet" href="CSS/user.css">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header id="header">
+        <div class="logo">
+            <h1>
+                <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+                <a href="index.html">SUBLIME<span>.</span></a>
+            </h1>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="admin.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="#">Categorias</a></li>
+                <li><a href="#">Mensajes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="section-title">
+        <h2>Agregar Producto</h2>
+    </div>
+
+<!--
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("guardarBtn").addEventListener("click", function () {
+                calcularIdProducto();
+            });
+        });
+
+        function calcularIdProducto() {
+            var nombre = document.getElementById("nombre").value;
+            var categoria = document.getElementById("categoria").value;
+
+            var primeraLetraCategoria = categoria.substring(0, 2).toUpperCase();
+            var primeraLetraNombre = nombre.substring(0, 2).toUpperCase();
+
+            var numeroAleatorio = Math.floor(Math.random() * 9000) + 1000;
+
+            var idproducto = primeraLetraCategoria + primeraLetraNombre + numeroAleatorio;
+
+            guardarProducto(idproducto);
+        }
+
+        function guardarProducto(idproducto) {
+            var nombre = document.getElementById("nombre").value;
+            var categoria = document.getElementById("categoria").value;
+            var detalles = document.getElementById("detalles").value;
+            var imagen = document.getElementById("imagen").value;
+
+            if (nombre === "" || categoria === "" || detalles === "" || imagen === "") {
+                alert("Por favor, complete todos los campos.");
+                return;
+            }
+
+            var producto = {
+                idproducto: idproducto,
+                nombre: nombre,
+                categoria: categoria,
+                detalles: detalles,
+                imagen: imagen
+            };
+
+            mostrarResultado(producto);
+        }
+
+        function mostrarResultado(producto) {
+            var resultadoDiv = document.getElementById("resultado");
+            resultadoDiv.innerHTML = "<h3>Producto Guardado con Éxito:</h3>" +
+                "<p>ID del Producto: " + producto.idproducto + "</p>" +
+                "<p>Nombre: " + producto.nombre + "</p>" +
+                "<p>Categoría: " + producto.categoria + "</p>" +
+                "<p>Detalles: " + producto.detalles + "</p>" +
+                "<p>Imagen: " + producto.imagen + "</p>";
+        }
+    </script>
+    -->
+
+    <div class="admin-menu">
+    <form id="formulario-producto">
+        <label for="id">Id del Producto:</label>
+        <input type="text" id="id" required><br><br>
+
+        <label for="nombre">Nombre del Producto:</label>
+        <input type="text" id="nombre" required><br><br>
+
+        <label for="categoria">Categoría:</label>
+        <select id="categoria" required>
+            <option value="1">Cerámica</option>
+            <option value="2">Acero</option>
+            <option value="3">Textiles</option>
+            <option value="4">Vidrio</option>
+            <option value="5">Madera</option>
+        </select><br><br>
+
+        <label for="detalles">Detalles del Producto:</label>
+        <textarea id="detalles" rows="3" required style="width: 300px;"></textarea><br><br>
+
+        <label for="nombre">Precio del Producto:</label>
+        <input type="text" id="precio" required><br><br>
+
+        <label for="imagen">Selecciona una imagen:</label>
+        <input type="file" id="fileInput" />
+        <br><br>
+
+        <button type="button" id="guardar" onclick="SubirProducto()">Guardar Producto</button><br><br>
+    </form>
+    </div>
+
+    <div id="mensaje-exito">Producto agregado correctamente.</div>
+
+
+    <footer id="footer">
+        <div class="footer-top">
+            <h3>SUBLIME</h3>
+            <p>Your mission or tagline goes here.</p>
+        </div>
+    </footer>
+
+</body>
+  <!--CONEXION A FIREBASE-->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+  
+    <!--Mis Scripts-->
+    <script src="/JavaScrip/conexion.js"></script>
+    <script src="JavaScrip/agregar.js"></script>
+
+</html>
